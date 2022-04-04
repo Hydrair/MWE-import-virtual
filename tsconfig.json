@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "declaration": true,
+        "declarationMap": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "jsx": "react",
+        "lib": ["dom", "es5"],
+        "module": "esNext",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
+        "outDir": "./dist",
+        "pretty": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "esNext",
+        "forceConsistentCasingInFileNames": true,
+        "importHelpers": true,
+        "composite": true,
+        "types": ["vite-plugin-pwa/client"]
+    },
+    "include": ["./src"]
+}

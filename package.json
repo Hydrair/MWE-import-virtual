@@ -1,0 +1,53 @@
+{
+    "name": "mwe",
+    "license": "MIT",
+    "version": "0.0.0",
+    "private": true,
+    "description": "mwe Framework",
+    "author": "Michael Kainz",
+    "homepage": "https://hydrair.github.io/samoa",
+    "files": [
+        "dist"
+    ],
+    "module": "./dist/mwe.es.js",
+    "types": "./dist/src/index.d.ts",
+    "scripts": {
+        "build": "tsc && vite build",
+        "build-watch": "yarn clean && tsc && vite build --watch",
+        "bw": "tsup src/index.ts --dts-only && vite build --watch",
+        "b": " vite build --watch",
+        "clean": "rimraf dist",
+        "dev": "yarn storybook",
+        "storybook": "start-storybook -p 9001 --ci",
+        "component:new": "hygen component with-prompt",
+        "page:new": "hygen page with-prompt"
+    },
+    "peerDependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-query": "3.34.15",
+        "react-router-dom": "^6.2.1"
+    },
+    "devDependencies": {
+        "@storybook/addon-actions": "^6.4.20",
+        "@storybook/addon-essentials": "^6.4.20",
+        "@storybook/addon-links": "^6.4.20",
+        "@storybook/builder-vite": "^0.1.24",
+        "@storybook/components": "^6.4.20",
+        "@storybook/react": "^6.4.20",
+        "@types/node": "^12",
+        "@types/react": "^17.0.38",
+        "@types/react-dom": "^17.0.10",
+        "@vitejs/plugin-react": "^1.1.4",
+        "http-proxy-middleware": "^2.0.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "rimraf": "^3.0.2",
+        "sass": "^1.49.7",
+        "typescript": "^4.4.4",
+        "vite": "^2.7.11",
+        "vite-plugin-dts": "^0.9.9",
+        "vite-plugin-pwa": "^0.11.13"
+    },
+    "dependencies": {}
+}

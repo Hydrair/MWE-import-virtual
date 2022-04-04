@@ -1,0 +1,296 @@
+@import "./variables.scss";
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $color--content;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+button {
+    color: white;
+    display: block;
+    cursor: pointer;
+    // font-weight: bold;
+    line-height: 1.25;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background-color: $color--primary;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+    &:hover {
+        filter: drop-shadow(0px 0px 4px $color--primary-hover);
+    }
+}
+
+.arrow {
+    width: 1rem;
+    height: 1rem;
+    border-left: 2px solid $color--text;
+    border-bottom: 2px solid $color--text;
+    --transform: "";
+    transform-origin: center;
+    &[class*="left"] {
+        --transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    &[class*="right"] {
+        transform: rotate(225deg);
+    }
+
+    &[class*="up"] {
+        --transform: rotate(135deg);
+        transform: var(--transform);
+    }
+}
+
+.fade-in {
+    animation: 0.5s fadein;
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+.fade-out {
+    animation: 0.5s fadeout;
+    @keyframes fadeout {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 1rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.dark-bg {
+    // display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.1);
+}
+
+.vh-80 {
+    height: 80vh !important;
+}
+
+input,
+textarea {
+    border: 1px solid $color--border;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: border-color 0.1s ease;
+    height: 2rem;
+
+    &:focus {
+        border-color: $color--primary-hover;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.102);
+    }
+
+    &[type="checkbox"]:focus {
+        box-shadow: none;
+    }
+}
+
+.loading-animation p + input {
+    display: block;
+    color: transparent !important;
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    margin-top: 0.25rem !important;
+    background-image: linear-gradient(
+        100deg,
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.15) 10%,
+        rgba(0, 0, 0, 0.25) 35%,
+        rgba(0, 0, 0, 0.15) 60%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+    animation: loadingAnimation 3s linear 0s infinite;
+}
+
+@keyframes loadingAnimation {
+    0% {
+        background-position: 300% 0;
+    }
+    99.999999% {
+        background-position: -300% 0;
+    }
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid $color--primary;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: $color--primary transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.popover-content {
+    height: 50%;
+}
+
+.hidden {
+    display: none;
+}

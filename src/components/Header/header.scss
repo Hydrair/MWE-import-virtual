@@ -1,0 +1,52 @@
+@import "../../variables.scss";
+
+.header {
+    position: sticky;
+    grid-column: 1/-1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+
+    border-bottom: 1px solid $color--border;
+    background-color: $color--background;
+    box-shadow: 0 0 0.5rem -1px $color--text;
+    align-self: start;
+
+    > .header-left {
+        justify-self: left;
+        justify-content: start;
+        display: flex;
+    }
+    > .header-middle {
+        text-align: center;
+        img {
+            height: 1.75rem;
+        }
+    }
+    > .header-right {
+        text-align: right;
+        display: inline-flex;
+        justify-self: right;
+        margin-right: 1rem;
+    }
+
+    @media (max-width: 1024px) {
+        .header-right {
+            display: none;
+        }
+    }
+}
+button {
+    border: none;
+    background-color: transparent;
+    color: $color--primary;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 1rem;
+}
