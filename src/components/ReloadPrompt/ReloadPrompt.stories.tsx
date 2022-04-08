@@ -1,18 +1,18 @@
 import React from "react";
 import { Story } from "@storybook/react";
-import { Header } from "./Header";
+import { ReloadPrompt } from "./ReloadPrompt";
 import { action } from "@storybook/addon-actions";
 
 export default {
-    title: "Components/Header",
-    component: Header,
+    title: "Components/ReloadPrompt",
+    component: ReloadPrompt,
     argTypes: {
         middle: { control: "text" },
     },
 };
 
 const Template: Story<any> = ({ onclick, ...args }) => (
-    <Header onclick={action("clicksss")} {...args} />
+    <ReloadPrompt onclick={action("clicksss")} {...args} />
 );
 
 export const Default = Template.bind({});
