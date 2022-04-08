@@ -1,4 +1,5 @@
-const { VitePWA } = require("vite-plugin-pwa");
+const VitePWA = require("vite-plugin-pwa").VitePWA;
+const { dirname } = require("path");
 
 module.exports = {
     core: {
@@ -6,9 +7,7 @@ module.exports = {
     },
     stories: ["../src/**/**/*.stories.tsx"],
     addons: ["@storybook/addon-essentials"],
-    // staticDirs: ['../public'],
     framework: "@storybook/react",
-
     async viteFinal(config, { configType }) {
         config.optimizeDeps.include = [
             "react-router-dom",
@@ -17,6 +16,12 @@ module.exports = {
             ...config.optimizeDeps.include,
         ];
         config.optimizeDeps.exclude = ["path", "fs"];
+        config.plugins = config.plugins ?? [];
+        config.plugins.push(
+            VitePWA({
+                root: dirname(__dirname),
+            })
+        );
         return config;
     },
 };

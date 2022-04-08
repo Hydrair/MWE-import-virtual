@@ -9970,6 +9970,11 @@ vite-plugin-pwa@^0.11.13:
     workbox-build "^6.4.2"
     workbox-window "^6.4.2"
 
+vite-plugin-virtual@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-virtual/-/vite-plugin-virtual-0.1.1.tgz#34fff2d2816ebaad0d53fdcd3500d12ec9c5fa0e"
+  integrity sha512-JnEbO2AOIfpMfL/uSz7snJ4HzTxCbJFtw7xX413UrYY0IiZjAnY78Ie/Kd7k03iBlyQsFpdzdKQu+ULxu0UXMg==
+
 vite@^2.7.11:
   version "2.9.1"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.9.1.tgz#84bce95fae210a7beb566a0af06246748066b48f"
@@ -10201,7 +10206,7 @@ workbox-broadcast-update@6.5.2:
   dependencies:
     workbox-core "6.5.2"
 
-workbox-build@^6.4.2:
+workbox-build@^6.4.2, workbox-build@^6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/workbox-build/-/workbox-build-6.5.2.tgz#774faafd84b1dc94b74739ceb5d8ff367748523b"
   integrity sha512-TVi4Otf6fgwikBeMpXF9n0awHfZTMNu/nwlMIT9W+c13yvxkmDFMPb7vHYK6RUmbcxwPnz4I/R+uL76+JxG4JQ==
@@ -10336,7 +10341,7 @@ workbox-sw@6.5.2:
   resolved "https://registry.yarnpkg.com/workbox-sw/-/workbox-sw-6.5.2.tgz#2f5dca0e96c61a450fccf0405095ddf1b6f43bc7"
   integrity sha512-2KhlYqtkoqlnPdllj2ujXUKRuEFsRDIp6rdE4l1PsxiFHRAFaRTisRQpGvRem5yxgXEr+fcEKiuZUW2r70KZaw==
 
-workbox-window@6.5.2, workbox-window@^6.4.2:
+workbox-window@6.5.2, workbox-window@^6.4.2, workbox-window@^6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/workbox-window/-/workbox-window-6.5.2.tgz#46d6412cd57039bdf3d5dd914ad21fb3f98fe980"
   integrity sha512-2kZH37r9Wx8swjEOL4B8uGM53lakMxsKkQ7mOKzGA/QAn/DQTEZGrdHWtypk2tbhKY5S0jvPS+sYDnb2Z3378A==

@@ -43,10 +43,10 @@ export function ReloadPrompt() {
         <div
             className={
                 "ReloadPrompt-container" +
-                (offlineReady || needRefresh ? "" : " hidden")
+                (offlineReady || needRefresh ? "" : " lol")
             }
         >
-            {(offlineReady || needRefresh) && (
+            {
                 <div className="ReloadPrompt-toast">
                     <div className="ReloadPrompt-message">
                         {offlineReady ? (
@@ -73,7 +73,7 @@ export function ReloadPrompt() {
                         Close
                     </button>
                 </div>
-            )}
+            }
             <div className="ReloadPrompt-date">{buildDate}</div>
         </div>
     );
