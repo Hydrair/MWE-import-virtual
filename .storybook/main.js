@@ -12,13 +12,11 @@ module.exports = {
     async viteFinal(config, { configType }) {
         config.optimizeDeps.include = [
             "react-router-dom",
-            "http-proxy-middleware",
             "vite",
             "vite-plugin-pwa",
-            "fast-deep-equal",
             ...config.optimizeDeps.include,
         ];
-        config.plugins.push(VitePWA({}));
+        config.optimizeDeps.exclude = ["path", "fs"];
         return config;
     },
 };
